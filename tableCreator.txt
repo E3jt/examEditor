@@ -1,0 +1,12 @@
+CREATE TABLE `examid` (
+  `id` int(11) NOT NULL,
+  `answerId` int(11) NOT NULL,
+  `type` tinyint(4) NOT NULL,
+  `text` varchar(512) NOT NULL,
+  `resource` varchar(1024) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+
+
+INSERT INTO `studentscredentials` (`ID`, `login`, `password`, `name`, `surname`, `class`, `classgroup`) 
+VALUES (NULL, 'ejt', 'asit', 'Tymon', 'Ławniczak', '3TP', '2');

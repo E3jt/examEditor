@@ -1,0 +1,279 @@
+@font-face {
+    font-family: BrunoAce;
+    src: url('assets/Nunito-VariableFont_wght.ttf');
+}
+
+html{
+    font-family: 'BrunoAce';
+    background-color: rgba(0, 105, 131, 0.589);
+    overflow-x: hidden;
+}
+
+body{
+    width: fit-content;
+    height: 100vh;
+    margin:0px;
+    margin-left: 20%;
+    padding: 18px;
+}
+
+
+textarea{
+    font-family: 'BrunoAce';
+}
+
+button{
+    font-family: 'BrunoAce';
+}
+
+#main{
+    width: 60vw;
+}
+
+div.que , div.queC{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center ;
+    align-items: start;
+    row-gap: 1em;
+    align-items: start;
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em 1em 0.3em 0.3em;
+    border-bottom: none;
+}
+
+button{
+    border: none;
+}
+
+.remove{
+    border-color:  rgb(0, 0, 0);
+    box-shadow: none;
+    background-color: none;
+    border-width: 0px;  
+    border-style: solid;
+    width: max-content;
+    background-color: rgba(220, 27, 27, 0.465);
+    border-radius: 0.3em;
+    font-size: 85%;
+    align-self: center;
+    margin-right: 2em;
+    transition: 0.5s;
+}
+
+.garbageCan::before{
+    content: '🗑';
+}
+
+.garbageCan{
+    border-color:  rgba(255, 0, 0, 0);
+    box-shadow: none;
+    background-color: none;
+    border-width: 2px;  
+    border-style: solid;
+    font-size: 24px;
+    height: min-content;
+    width: 1.5em;
+    background-color: rgba(116, 116, 116, 0.356);
+    border-radius: 0.5em;
+    transition: 0.5s;
+}
+
+form > div{
+    width: 100%;
+}
+
+.que > div{
+    grid-template-columns: 40% 10% 10%;
+    display: grid;
+    justify-content: start;
+    align-content: stretch;
+    align-items: start;
+    font-size: 100%;
+}
+
+.answer{
+    border: none;
+    background-color: rgba(196, 173, 173, 0.505);
+    border-radius: 0.3em 0.3em 0.1em 0.1em;
+    font-size: 120%;
+}
+
+.que > div:nth-child(1){
+    grid-template-columns: 55% auto auto;
+    display: grid;
+    justify-content: space-between;
+    font-size: 150%;
+    margin-bottom: 2.5em;
+}
+
+.que > div:nth-child(1) >textarea{
+    font-size: 150%;
+    border: none;
+    background-color: rgba(196, 173, 173, 0.505);
+    border-radius: 0.3em 0.3em 0.1em 0.1em;
+}
+
+.que > div:nth-child(1) >textarea:read-only:focus , .answer:read-only:focus , .question{
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type='radio']{
+    height: 3em;
+    width: 3em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: rgba(128, 128, 128, 0.356);
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+input[type='radio']:hover{
+    cursor: pointer;
+    border: 0.3em rgba(0, 0, 0, 0.404) solid;
+}
+
+input[type='radio']:checked{
+background-color: rgba(0, 100, 0, 0.664);
+}
+
+.adder , .add{
+    border-color:  rgb(0, 0, 0);
+    box-shadow: none;
+    background-color: none;
+    border-width: 0px;  
+    border-style: solid;
+    font-size: 85%;
+    width: max-content;
+    background-color: rgba(0, 175, 38, 0.472);
+    border-radius: 0.2em;
+    align-self: center;
+    transition: 0.5s;
+}
+
+#form, #main{
+    display: grid;
+    row-gap: 2.5vh;
+}
+
+.question{
+    font-size: 150%;
+    border: none;
+    background-color: rgba(196, 173, 173, 0.505);
+    border-radius: 0.3em 0.3em 0.1em 0.1em;
+}
+
+.queC > .answer{
+    width: 90%;
+}
+
+.garbageCan:hover{
+    background-color: rgba(116, 116, 116);
+    cursor:pointer;
+    scale: 1.1;
+}
+
+.adder:hover , .add:hover , .remove:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+#check, #closed, #opened, #removeAll{
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    font-size: 100%;
+    background-color: rgba(128, 128, 128, 0.316);;
+    border: 0px solid black;
+    border-radius: 0.1em;
+    padding: 0.5em;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+#check:hover, #closed:hover, #opened:hover, #removeAll:hover{
+    scale: 1.1;
+    background-color:white;
+    cursor: pointer; 
+}
+
+.queC > .remove{
+    font-size: 125%;
+}
+
+#closed,#opened{
+    background-color: rgba(0, 128, 0, 0.353);
+}
+
+#closed:hover , #opened:hover{
+    background-color: rgb(0, 128, 0);
+}
+
+#removeAll{
+    margin-bottom: 25em;
+    background-color: rgba(220, 20, 60, 0.536);
+}
+
+#removeAll:hover{
+    background-color: rgb(220, 20, 20);
+}
+
+#overlay{
+    height: 110vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.434);
+    display: none;
+    z-index: 10;
+}
+
+#overlay > form{
+    width: min-content;
+}
+
+#overlay > remove{
+    background-color: orange;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5em;
+    font-size: 150%;
+    border-radius: 0.4em;
+}
+
+#no , #deleteA{
+    font-size: 150%;
+    border: 0px black solid;
+    width: fit-content;
+    height: 1.4em;
+    background-color: rgba(128, 128, 128, 0.438);
+    transition: 0.1s;
+    border-radius: 0.1em;
+}
+
+container{
+    display: grid;
+    grid-template-columns: 25% 25%;
+    align-items: center;
+    justify-content: center;
+    justify-items: start;
+}
+
+#no:hover{
+    background-color: rgba(0, 128, 0, 0.63);
+    scale: 1.1;
+}
+
+#deleteA:hover{
+    background-color: rgb(255, 1, 1);
+    scale: 1.1;
+}

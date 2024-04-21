@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     
+     <div id="main">
+          <form method="post" id="form">
+               <input type="submit" name="check" id="check"/>
+               </form>
+               <button id="closed">Dodaj pytanie zamkniete</button>
+               <button id="opened">Dodaj pytanie otwarte</button>
+               <input type="radio" id="test"/> 
+     </div>
+
+     <script>
+               var gCounter = 0;
+               function remove(el) {
+                    var element = el;
+                    el.innerHTML = "";
+                    element.remove();
+               };
+          
+               document.getElementById("test").checked = true;
+               document.getElementsByName
+
+               document.getElementById("closed").addEventListener("click" , ()=>{
+                    
+                    const questionCounter = gCounter;  var sCounter = 0;
+
+                    var form = document.createElement("div");    
+                    var formDeleter = document.createElement("button");    
+                    var answerAdder = document.createElement("button");    
+                    var question = document.createElement("textarea");  
+                    var ref = document.getElementById("check"); 
+                    
+                    
+                    formDeleter.setAttribute("onclick","remove(this.parentNode);");
+
+
+                    answerAdder.addEventListener("click", () => {
+                         sCounter += 1;
+                         var radio = document.createElement("input"), label = document.createElement("label"), answer = document.createElement("textarea");
+                         var parent = document.createElement("div"), answerDeleter = document.createElement("button");
+                         
+                         radio.type = "checkbox";      
+                         radio.name = "answerCorrect["+ questionCounter +"]["+sCounter+"]";    
+                         radio.value = 0;
+
+
+                         answerDeleter.type = "button";
+                         answerDeleter.innerHTML = ":garbageCan:";
+                         answerDeleter.setAttribute("onclick","remove(this.parentNode);");
+
+
+                         answer.placeholder = "Podaj odpowiedź";      
+                         answer.name = "answerContent["+ questionCounter +"]["+sCounter+"]";       
+                         answer.style = 'resize : none;';
+
+
+                         label.htmlFor = "answerCorrect["+ questionCounter +"]["+sCounter+"]";      
+                         label.className = "answerCorrect["+ questionCounter +"]["+sCounter+"]";
+                        
+
+                         label.appendChild(radio);     parent.appendChild(answer);     parent.appendChild(label);       parent.appendChild(answerDeleter);      form.appendChild(parent);
+                    });
+                    question.placeholder = "Treść pytania";
+                    question.name = "question["+ questionCounter +"]";
+                    question.style = 'resize : none;';
+                    
+                    answerAdder.type = "button";
+                    answerAdder.innerHTML = "Dodaj odpowiedź";
+
+                    formDeleter.type = "button";
+                    formDeleter.innerHTML = "Usuń Pytanie";
+                    
+                    form.className = "que";
+                    form.appendChild(answerAdder);
+                    form.appendChild(formDeleter);
+                    form.appendChild(question);
+
+                    document.getElementById("form").insertBefore(form , ref);
+                    gCounter += 1;
+                    
+               });
+               document.getElementById("opened").addEventListener("click", () => {
+                    
+                    const questionCounter = gCounter;
+                    var sCounter = 0;
+                    var answer = document.createElement("textarea");
+                    var form = document.createElement("div");
+                    var formDeleter = document.createElement("button");
+                    var question = document.createElement("textarea");  
+                    var ref = document.getElementById("check");
+
+                    formDeleter.setAttribute("onclick","remove(this.parentNode);");
+
+                    question.placeholder = "Treść pytania";
+                    question.name = "questionC["+ questionCounter +"]";
+                    question.style = 'resize : none;';
+
+                    answer.name = "answerContent["+ questionCounter +"][0]";
+                    answer.style = 'resize : none;';
+
+                    formDeleter.type = "button";
+                    formDeleter.innerHTML = "Usuń Pytanie";
+
+                    form.className = "que";
+                    form.appendChild(formDeleter);
+                    form.appendChild(question);
+                    form.appendChild(answer);
+                    
+                    document.getElementById("form").insertBefore(form , ref);
+                    gCounter += 1;
+               });
+     </script>
+
+</body>
+</html>

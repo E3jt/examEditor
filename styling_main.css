@@ -1,0 +1,73 @@
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+input{
+    width: 15%;
+    font-size: 200%;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+}
+
+input:nth-child(1):focus, input:nth-child(2):focus{
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 50%;
+}
+
+input:nth-child(3){
+    background-color: rgb(0, 133, 0);
+    transition: 0.1s;
+    justify-self: right;
+}
+
+input:nth-child(3):hover , button:hover{
+    scale: 1.05;
+    animation: tilt-shaking 0.30s infinite;
+    cursor: pointer;
+}
+
+body{
+    width: 80vw;
+    margin-left: 10vw;
+}
+
+p{
+    font-size: 300%;
+    background-color: rgba(49, 49, 49, 0.377);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+div{
+    font-size: 225%;
+    display: grid;
+    grid-template-columns: 35% 35% 20%;
+    justify-items: start;
+    margin-bottom: 1em;
+    background-color: rgba(49, 49, 49, 0.274);
+    padding: 1%;
+    border-radius: 0.4em;
+}
+
+button{
+    margin-left: 10%;
+    font-size: 100%;
+    width: max-content;
+}
+
+.opener{
+    background-color: rgba(99, 40, 13, 0.507);
+    padding: 0.3em;
+    border-radius: 0.2em;
+    transition: 0.1s;
+}
